@@ -11,4 +11,4 @@ if __name__ == '__main__':
         except:
             print(each.spelling.upper())
 
-    file.write(str(LIST.get_list(1)))
+    file.write(str(LIST))

@@ -22,7 +22,7 @@ class VocabularyList(object):
                     if (i%100==0):
                         filecontent += '\n\n\n------------- LIST %s -------------' % (i/100+1)
                     if (i%10==0):
-                        filecontent += '\n\n\n*** Unit %s ***\n\n' % (i%100/10+1)
+                        filecontent += '\n\n\n*** Unit %s.%s ***\n\n' % ((i/100+1), (i%100/10+1))
                         filecontent += enumerate_list(self.words[i:i+10])
                 return filecontent
             else:
