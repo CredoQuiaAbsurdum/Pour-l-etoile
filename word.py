@@ -91,7 +91,10 @@ class Word(object):
 
     def __str__(self):
         spelling = self.spelling
-        pronunciation = '[' + self.pronunciation + ']'
+        if self.pronunciation != '':
+            pronunciation = '[' + self.pronunciation + ']'
+        else:
+            pronunciation = ''
         test_ways = ''
         for _ in self.test_ways:
             test_ways += "\n【考法 %s】 %s" % (self.test_ways.index(_)+1, str(_))
