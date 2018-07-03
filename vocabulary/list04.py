@@ -937,3 +937,6 @@ list4_unit10 = VocabularyList([Word('commodious', "",
                                             'to form the substance of : constitute',
                                             ['composed of many ingredients 有很多配料组成'],
                                             ['constitute', 'comprise', 'make up'])])])
+
+LIST4 = VocabularyList(list4_unit1.words+list4_unit2.words+list4_unit3.words+list4_unit4.words+list4_unit5.words+list4_unit6.words+list4_unit7.words+list4_unit8.words+list4_unit9.words+list4_unit10.words)
+
