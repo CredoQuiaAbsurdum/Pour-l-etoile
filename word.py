@@ -9,16 +9,12 @@ class VocabularyList(object):
 
     def __init__(self, words = []):
         self.words = words
-        self.seed = None
         self.version = 'Alphabetical Order'
 
     def __str__(self):
         try:
             if (len(self.words)==3100):
-                if self.seed:
-                    filecontent = 'VERSION: %s' % self.seed
-                else:
-                    filecontent = 'VERSION: %s' % self.version
+                filecontent = 'VERSION: %s' % self.version
                 for i in range(3100):
                     if (i%100==0):
                         filecontent += '\n\n\n------------- LIST %s -------------' % (i/100+1)
@@ -58,7 +54,7 @@ class VocabularyList(object):
         return "词条 %s 未收录" % w
 
     def shuffle(self, seed='Fox'):
-        self.seed = seed
+        self.version = seed
         try:
             random.Random(seed).shuffle(self.words)
         except:
@@ -119,8 +115,8 @@ class TestWay(object):
         self.translation = translation
         self.definition = definition
         self.examples = examples
-        self.synonyms = synonyms
-        self.antonyms = antonyms
+        self.synonyms = getlist(synonyms)
+        self.antonyms = getlist(antonyms)
         self.other_form = other_form
 
     def __str__(self):

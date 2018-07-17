@@ -21,6 +21,14 @@ def random(num):
 def son():
     print '爸爸'
 
+# Read syn and ant for TestWay
+def getlist(L):
+    if type(L) is list:
+        return L
+    elif type(L) is str:
+        return L.split(', ')
+    else:
+        return []
 
 
 
