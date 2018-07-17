@@ -50,8 +50,7 @@ class VocabularyList(object):
     def search(self, w):
         for word in self.words:
             if (word.spelling.lower() == w.lower()):
-                return str(word)
-        return "词条 %s 未收录" % w
+                return word
 
     def shuffle(self, seed='Fox'):
         self.version = seed
