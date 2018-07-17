@@ -115,9 +115,13 @@ class TestWay(object):
         self.translation = translation
         self.definition = definition
         self.examples = examples
-        self.synonyms = getlist(synonyms)
-        self.antonyms = getlist(antonyms)
+        self.synonyms = synonyms
+        self.antonyms = antonyms
         self.other_form = other_form
+        if synonyms is not None:
+            self.synonyms = getlist(synonyms)
+        if antonyms is not None:
+            self.antonyms = getlist(antonyms)
 
     def __str__(self):
         # may need a different way for new line in rtf
