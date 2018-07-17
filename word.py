@@ -10,6 +10,7 @@ class VocabularyList(object):
     def __init__(self, words = []):
         self.words = words
         self.seed = None
+        self.version = 'Alphabetical Order'
 
     def __str__(self):
         try:
@@ -17,7 +18,7 @@ class VocabularyList(object):
                 if self.seed:
                     filecontent = 'VERSION: %s' % self.seed
                 else:
-                    filecontent = 'VERSION: Alphabetical Order'
+                    filecontent = 'VERSION: %s' % self.version
                 for i in range(3100):
                     if (i%100==0):
                         filecontent += '\n\n\n------------- LIST %s -------------' % (i/100+1)
@@ -35,12 +36,6 @@ class VocabularyList(object):
             self.words = []
         add_to_list(w, self.words)
 
-    def shuffle(self, seed='Fox'):
-        self.seed = seed
-        try:
-            random.Random(seed).shuffle(self.words)
-        except:
-            return EMPTYLIST+': shuffle failed.'
 
     def add_list(self, v):
         if v.words is not None:
@@ -61,6 +56,17 @@ class VocabularyList(object):
             if (word.spelling.lower() == w.lower()):
                 return str(word)
         return "词条 %s 未收录" % w
+
+    def shuffle(self, seed='Fox'):
+        self.seed = seed
+        try:
+            random.Random(seed).shuffle(self.words)
+        except:
+            return EMPTYLIST+': shuffle failed.'
+
+    def reverse(self):
+        self.words.sort(key=lambda x: x.spelling[::-1])
+        self.version = 'Reverse'
 
     def get_list_unit(self, listNum, unitNum):
         if (len(self.words)==3100):

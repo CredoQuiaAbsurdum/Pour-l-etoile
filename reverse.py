@@ -4,7 +4,8 @@ if __name__ == '__main__':
 
     file = open('reverse.txt', 'w+')
 
-    LIST.words.sort(key=lambda x: x.spelling[::-1])
+    LIST.reverse()
+
     for each in LIST.words:
         try:
             temp = str(each)
