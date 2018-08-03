@@ -53,6 +53,7 @@ class VocabularyList(object):
                 return word
 
     def shuffle(self, seed='Fox'):
+        self.words.sort(key=lambda x: x.spelling[::1])
         self.version = seed
         try:
             random.Random(seed).shuffle(self.words)
