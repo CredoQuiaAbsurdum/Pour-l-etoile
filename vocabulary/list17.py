@@ -844,6 +844,6 @@ list17_unit10 = VocabularyList([Word('parry', "",
                                             '(由内而外散发的)氛围, 气场',
                                             'an appearance or aura that is derived from association, habit, or established character',
                                             ["Although the winery is brand-new, it has been constructed and decorated to give it a patina of old-world quaintness. 尽管酿酒厂是全新建造的, 但它的构造和装饰都刻意营造出一种古色古香的奇异氛围"],
-                                            antonyms = ' air, ambience, aroma, atmosphere, climate, flavor, halo, odor, smell, temper, vibration')])])
+                                            antonyms = 'air, ambience, aroma, atmosphere, climate, flavor, halo, odor, smell, temper, vibration')])])
 
 LIST17 = VocabularyList(list17_unit1.words+list17_unit2.words+list17_unit3.words+list17_unit4.words+list17_unit5.words+list17_unit6.words+list17_unit7.words+list17_unit8.words+list17_unit9.words+list17_unit10.words)

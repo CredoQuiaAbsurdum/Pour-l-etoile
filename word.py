@@ -92,6 +92,8 @@ class Word(object):
 
     def __str__(self):
         spelling = self.spelling
+        if spelling == '':
+            return ''
         if self.pronunciation != '':
             pronunciation = '[' + self.pronunciation + ']'
         else:
